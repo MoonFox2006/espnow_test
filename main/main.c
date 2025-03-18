@@ -111,7 +111,7 @@ static uint8_t wifi_find_channel(void) {
             ESP_LOGI(TAG, "Channel %u RSSI %d", i + 1, rssis[i]);
         }
         for (uint8_t i = 1; i < 13; ++i) {
-            if (rssis[i] < rssis[result])
+            if (rssis[i] <= rssis[result])
                 result = i;
         }
         ESP_LOGI(TAG, "WiFi channel %u selected", result + 1);
